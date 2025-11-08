@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Card Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">💳 Card Manager</h1>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}" class="nav-link">Dashboard</a></li>
+                <li><a href="{{ url_for('add_card') }}" class="nav-link">Add Card</a></li>
+                <li><a href="{{ url_for('add_transaction') }}" class="nav-link">Add Transaction</a></li>
+                <li><a href="{{ url_for('transactions') }}" class="nav-link">Transactions</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Card Manager. All rights reserved.</p>
+    </footer>
+</body>
+</html>
